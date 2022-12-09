@@ -1,4 +1,5 @@
 # Credit
 
 Baby Groot CSS & Animation designed by @baumannzone
-https://codepen.io/baumannzone/details/yLVKyqV
+
+Copyright (c) 2022 by Jorge Baumann (https://codepen.io/baumannzone/pen/yLVKyqV)
