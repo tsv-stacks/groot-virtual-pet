@@ -23,6 +23,8 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin: 0 auto;
+  max-width: 80vw;
 }
 .baby-groot .leaf {
   opacity: 0;
