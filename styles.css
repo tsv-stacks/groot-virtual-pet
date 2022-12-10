@@ -1,5 +1,5 @@
 :root {
-  --sandy-brown: #f4a460;
+  --text-brown: #f4a460;
   --bg-brown: #9b6844;
 }
 
@@ -27,11 +27,12 @@ body {
   justify-content: space-between;
 }
 h1,
+h2,
 h3,
 a {
   text-align: center;
   font-family: monospace;
-  color: var(--sandy-brown);
+  color: var(--text-brown);
 }
 .container {
   margin: 0 auto;
@@ -90,6 +91,7 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 0 15%;
 }
 
 .fade-out {
