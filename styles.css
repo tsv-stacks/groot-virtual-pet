@@ -1,6 +1,7 @@
 :root {
-  --sandy-brown: #f4a460;
+  --text-brown: #f4a460;
   --bg-brown: #9b6844;
+  --hover-brown: #e5d3b3;
 }
 
 html,
@@ -27,11 +28,12 @@ body {
   justify-content: space-between;
 }
 h1,
+h2,
 h3,
 a {
   text-align: center;
   font-family: monospace;
-  color: var(--sandy-brown);
+  color: var(--text-brown);
 }
 .container {
   margin: 0 auto;
@@ -65,10 +67,6 @@ footer {
   text-align: center;
 }
 
-.fa-icons {
-  /* background-color: rgba(177, 76, 21, 0.3); */
-}
-
 .fa-icons a {
   text-decoration: none;
 }
@@ -90,6 +88,7 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 0 15%;
 }
 
 .fade-out {
@@ -118,6 +117,15 @@ footer {
   100% {
     opacity: 1;
   }
+}
+
+.fa {
+  color: var(--text-brown);
+}
+
+footer a:hover,
+footer a:focus {
+  color: #e5d3b3;
 }
 
 .baby-groot .leaf {
