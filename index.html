@@ -13,6 +13,33 @@
   </head>
   <body>
     <h1><span id="greeting">A Virtual Baby Groot Pet</span></h1>
+
+    <div id="modal-add-name" class="modal">
+      <form
+        action=""
+        onsubmit="event.preventDefault()"
+        id="add-name-form"
+        class="modalcontent"
+      >
+        <div class="modal-container">
+          <h2>Let's get started!</h2>
+          <label for="input-name">What is your name?</label>
+          <input
+            type="text"
+            id="input-name"
+            name="input-name"
+            required
+            maxlength="15"
+            minlength="2"
+          />
+
+          <button type="submit" class="submitbtn" onclick="nameGen()">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
     <div class="container">
       <div class="baby-groot">
         <div class="top">
@@ -62,6 +89,7 @@
         </div>
       </div>
     </div>
+
     <footer>
       <div>
         <p class="me-tsvstacks">
