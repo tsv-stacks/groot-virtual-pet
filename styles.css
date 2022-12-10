@@ -1,6 +1,7 @@
 :root {
   --text-brown: #f4a460;
   --bg-brown: #9b6844;
+  --hover-brown: #e5d3b3;
 }
 
 html,
@@ -66,10 +67,6 @@ footer {
   text-align: center;
 }
 
-.fa-icons {
-  /* background-color: rgba(177, 76, 21, 0.3); */
-}
-
 .fa-icons a {
   text-decoration: none;
 }
@@ -120,6 +117,15 @@ footer {
   100% {
     opacity: 1;
   }
+}
+
+.fa {
+  color: var(--text-brown);
+}
+
+footer a:hover,
+footer a:focus {
+  color: #e5d3b3;
 }
 
 .baby-groot .leaf {
