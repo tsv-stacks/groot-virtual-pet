@@ -1,6 +1,15 @@
 let inputText = document.getElementById("input-name");
 let greetText = document.getElementById("greeting");
 
+function Pet(name) {
+  this.name = name;
+  age = 0;
+}
+
+Pet.prototype.growUp = function () {
+  this.age++;
+};
+
 const nameGen = () => {
   let testText = inputText.value.trim();
   if (testText === "") {
