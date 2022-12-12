@@ -3,7 +3,7 @@ let greetText = document.getElementById("greeting");
 
 function Pet(name) {
   this.name = name;
-  age = 0;
+  this.age = 0;
 }
 
 Pet.prototype.growUp = function () {
@@ -33,4 +33,9 @@ const titleCase = (string) =>
 const play = () => {
   let audio = document.getElementById("audio");
   audio.play();
+};
+
+module.exports = {
+  testEnvironment: "jsdom",
+  titleCase,
 };
