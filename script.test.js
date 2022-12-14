@@ -9,11 +9,39 @@ describe("input to name clean", () => {
 describe("Testing methods on Pet constructor", () => {
   // set newPet as instance for testing
   let newPet = new Pet("test groot");
+  // set oldPet as instance for testing
+  let oldPet = new Pet("old groot");
+  oldPet.growUp();
+  oldPet.growUp();
   test("Initial age is set to 0", () => {
     expect(newPet.age).toBe(0);
   });
 
+  test("growUp() adds 1 to age: after function has run twice", () => {
+    expect(oldPet.age).toBe(2);
+  });
+
+  test("Initial hunger is set to 0", () => {
+    expect(newPet.hunger).toBe(0);
+  });
+
+  test("Initial fitness is set to 10", () => {
+    expect(newPet.fitness).toBe(10);
+  });
+
+  test("Initial fitness is set to 10: after function has run twice", () => {
+    expect(oldPet.fitness).toBe(4);
+  });
+
   test("growUp() adds 1 to age", () => {
-    expect(newPet.growUp()).toEqual(expect(newPet.age).toBe(1));
+    expect(oldPet.age).toBe(2);
+  });
+
+  test("growUp() adds 5 to hunger", () => {
+    expect(oldPet.hunger).toBe(10);
+  });
+
+  test("growUp() adds 5 to hunger: after function has run twice", () => {
+    expect(oldPet.hunger % 5).toBe(0);
   });
 });
