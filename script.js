@@ -1,14 +1,17 @@
 let inputText = document.getElementById("input-name");
 let greetText = document.getElementById("greeting");
 
-function Pet(name) {
-  this.name = name;
-  this.age = 0;
+class Pet {
+  constructor(name) {
+    this.name = name;
+    this.age = 0;
+  }
+  growUp() {
+    this.age++;
+  }
 }
 
-Pet.prototype.growUp = function () {
-  this.age++;
-};
+const testGroot = new Pet("groot");
 
 const nameGen = () => {
   let testText = inputText.value.trim();
@@ -38,4 +41,5 @@ const play = () => {
 module.exports = {
   testEnvironment: "jsdom",
   titleCase,
+  Pet,
 };
