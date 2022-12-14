@@ -76,3 +76,30 @@ describe("testing feed method on Pet constructor", () => {
     expect(newPet.hunger).toBe(0);
   });
 });
+
+describe("give the Pet function a checkUp method that lets you know how the pet is feeling", () => {
+  const newPet = new Pet("test groot");
+
+  test("if pet's fitness is 3 or less, return 'I need a walk'", () => {
+    newPet.fitness = 2;
+    expect(newPet.checkUp()).toBe("I need a walk");
+  });
+
+  test("if pet's hunger is 5 or more, return 'I am hungry'", () => {
+    newPet.fitness = 6;
+    newPet.hunger = 7;
+    expect(newPet.checkUp()).toBe("I am hungry");
+  });
+
+  test("if pet's hunger is 5 or more, if pet's fitness is 3 or less: 'I am hungry AND I need a walk'", () => {
+    newPet.fitness = 3;
+    newPet.hunger = 5;
+    expect(newPet.checkUp()).toBe("I am hungry AND I need a walk");
+  });
+
+  test("if pet's hunger is less than 5, if pet's fitness is 4 or more:'I feel great!' ", () => {
+    newPet.fitness = 4;
+    newPet.hunger = 3;
+    expect(newPet.checkUp()).toBe("I feel great!");
+  });
+});
