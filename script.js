@@ -13,6 +13,13 @@ class Pet {
     this.hunger += 5;
     this.fitness -= 3;
   }
+  walk() {
+    if (this.fitness >= 7) {
+      this.fitness = 10;
+    } else {
+      this.fitness += 4;
+    }
+  }
 }
 
 const testGroot = new Pet("groot");

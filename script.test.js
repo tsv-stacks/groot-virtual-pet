@@ -6,7 +6,7 @@ describe("input to name clean", () => {
   });
 });
 
-describe("Testing methods on Pet constructor", () => {
+describe("Testing grow Up method on Pet constructor", () => {
   // set newPet as instance for testing
   let newPet = new Pet("test groot");
   // set oldPet as instance for testing
@@ -43,5 +43,20 @@ describe("Testing methods on Pet constructor", () => {
 
   test("growUp() adds 5 to hunger: after function has run twice", () => {
     expect(oldPet.hunger % 5).toBe(0);
+  });
+});
+
+describe("Testing walk method on Pet constructor", () => {
+  let newPet = new Pet("test groot");
+  newPet.walk();
+  let oldPet = new Pet("old groot");
+  oldPet.fitness = 2;
+  oldPet.walk();
+
+  test("fitness greater than 7", () => {
+    expect(newPet.fitness).toBe(10);
+  });
+  test("fitness is less than 7", () => {
+    expect(oldPet.fitness).toBe(6);
   });
 });
