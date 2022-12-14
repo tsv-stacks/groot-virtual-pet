@@ -8,9 +8,9 @@ describe("input to name clean", () => {
 
 describe("Testing grow Up method on Pet constructor", () => {
   // set newPet as instance for testing
-  let newPet = new Pet("test groot");
+  const newPet = new Pet("test groot");
   // set oldPet as instance for testing
-  let oldPet = new Pet("old groot");
+  const oldPet = new Pet("old groot");
   oldPet.growUp();
   oldPet.growUp();
   test("Initial age is set to 0", () => {
@@ -47,7 +47,7 @@ describe("Testing grow Up method on Pet constructor", () => {
 });
 
 describe("Testing walk method on Pet constructor", () => {
-  let newPet = new Pet("test groot");
+  const newPet = new Pet("test groot");
   newPet.walk();
   let oldPet = new Pet("old groot");
   oldPet.fitness = 2;
@@ -58,5 +58,21 @@ describe("Testing walk method on Pet constructor", () => {
   });
   test("fitness is less than 7", () => {
     expect(oldPet.fitness).toBe(6);
+  });
+});
+
+describe("testing feed method on Pet constructor", () => {
+  const newPet = new Pet("test groot");
+  newPet.feed();
+  let oldPet = new Pet("old groot");
+  oldPet.hunger = 7;
+  oldPet.feed();
+
+  test("hunger decrease the Pet's hunger level by 3", () => {
+    expect(oldPet.hunger).toBe(4);
+  });
+
+  test("hunger does not go below 0", () => {
+    expect(newPet.hunger).toBe(0);
   });
 });

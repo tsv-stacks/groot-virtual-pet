@@ -20,6 +20,13 @@ class Pet {
       this.fitness += 4;
     }
   }
+  feed() {
+    if (this.hunger <= 3) {
+      this.hunger = 0;
+    } else {
+      this.hunger -= 3;
+    }
+  }
 }
 
 const testGroot = new Pet("groot");
