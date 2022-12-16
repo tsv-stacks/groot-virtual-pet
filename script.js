@@ -7,6 +7,21 @@ class Pet {
     this.age = 0;
     this.hunger = 0;
     this.fitness = 10;
+    this.isAlive = true;
+    this.isAdult = false;
+  }
+  deathCheck() {
+    if (this.fitness === 0) {
+      console.log("pet died due to poor health");
+      return (this.isAlive = false);
+    } else if (this.hunger >= 10) {
+      console.log("pet died due to starvation");
+      return (this.isAlive = false);
+    } else if (this.age >= 30) {
+      this.isAdult = true;
+      return console.log("adult groot");
+    }
+    return this.checkUp();
   }
   growUp() {
     this.age++;
@@ -40,6 +55,18 @@ class Pet {
 }
 
 const testGroot = new Pet("groot");
+
+const death = () => {
+  return "death";
+};
+
+const adultGroot = () => {
+  return "game win";
+};
+
+const gameOver = () => {
+  return "game over";
+};
 
 const nameGen = () => {
   let testText = inputText.value.trim();

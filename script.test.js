@@ -49,7 +49,7 @@ describe("Testing grow Up method on Pet constructor", () => {
 describe("Testing walk method on Pet constructor", () => {
   const newPet = new Pet("test groot");
   newPet.walk();
-  let oldPet = new Pet("old groot");
+  const oldPet = new Pet("old groot");
   oldPet.fitness = 2;
   oldPet.walk();
 
@@ -101,5 +101,31 @@ describe("give the Pet function a checkUp method that lets you know how the pet 
     newPet.fitness = 4;
     newPet.hunger = 3;
     expect(newPet.checkUp()).toBe("I feel great!");
+  });
+});
+
+describe("Guard Clauses to check if pet is still alive using deathCheck()", () => {
+  const newPet = new Pet("test groot");
+  const oldPet = new Pet("old groot");
+
+  test("pet is alive when object first created", () => {
+    expect(newPet.isAlive).toBe(true);
+  });
+  test("pet is dead when fitness = 0", () => {
+    newPet.fitness = 0;
+    newPet.deathCheck();
+    expect(newPet.isAlive).toBe(false);
+  });
+
+  test("pet is dead when hunger >= 10", () => {
+    newPet.hunger = 10;
+    newPet.deathCheck();
+    expect(newPet.isAlive).toBe(false);
+  });
+
+  test("pet is adult when age > 30", () => {
+    oldPet.age = 30;
+    oldPet.deathCheck();
+    expect(oldPet.isAdult).toBe(true);
   });
 });
