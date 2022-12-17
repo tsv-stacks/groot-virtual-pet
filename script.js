@@ -20,8 +20,9 @@ class Pet {
     } else if (this.age >= 30) {
       this.isAdult = true;
       return console.log("adult groot");
+    } else {
+      return this.checkUp();
     }
-    return this.checkUp();
   }
   growUp() {
     this.age++;
@@ -57,15 +58,14 @@ class Pet {
 const testGroot = new Pet("groot");
 
 const death = () => {
+  document.getElementById("death-trigger").style.display = "none";
   return "death";
 };
 
 const adultGroot = () => {
+  death();
+  document.getElementById("winner").style.display = "block";
   return "game win";
-};
-
-const gameOver = () => {
-  return "game over";
 };
 
 const nameGen = () => {

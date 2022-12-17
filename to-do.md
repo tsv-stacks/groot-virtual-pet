@@ -8,3 +8,10 @@ https://codepen.io/whipcat/pen/ExKPQqZ
 footer
 
 # (i) on hover gives information
+
+use modal and make info cover screen
+(https://www.w3schools.com/howto/howto_js_sidenav.asp)
+
+# death animation
+
+# refresh page to restart

@@ -30,7 +30,9 @@ body {
 h1,
 h2,
 h3,
-a {
+a,
+label,
+#submitbtn {
   text-align: center;
   font-family: monospace;
   color: var(--text-brown);
@@ -99,6 +101,25 @@ footer {
 .fade-in {
   animation: fadeIn ease 2s;
   animation-fill-mode: forwards;
+}
+
+.sad {
+  margin-top: 25px;
+  transform: rotate(180deg) !important;
+}
+
+#winner {
+  display: flexbox;
+  display: none;
+}
+
+img {
+  max-height: 326px;
+  z-index: 2;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes fadeOut {
