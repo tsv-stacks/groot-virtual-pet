@@ -18,8 +18,9 @@ class Pet {
       console.log("pet died due to starvation");
       return (this.isAlive = false);
     } else if (this.age >= 30) {
+      play();
       this.isAdult = true;
-      return console.log("adult groot");
+      return adultGroot();
     } else {
       return this.checkUp();
     }
