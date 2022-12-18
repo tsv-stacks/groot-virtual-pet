@@ -1,5 +1,6 @@
 let inputText = document.getElementById("input-name");
 let greetText = document.getElementById("greeting");
+const nameForm = document.getElementById("add-name-form");
 
 class Pet {
   constructor(name) {
@@ -65,7 +66,7 @@ class Pet {
   }
 }
 
-const testGroot = new Pet("groot");
+// const testGroot = new Pet("groot");
 
 const death = () => {
   document.getElementById("death-trigger").style.display = "none";
@@ -86,13 +87,18 @@ const nameGen = () => {
     );
   } else {
     play();
+    console.log("name recieved");
     testText = titleCase(testText);
     greetText.innerText = `Hello ${testText}\n I am Groot!`;
     document.getElementById("modal-add-name").classList.add("fade-out");
     greetText.classList.add("fade-in");
-    return console.log("name recieved");
+    setTimeout('nameForm.style.display = "none"', 2000);
+    const userPet = new Pet(testText);
+    console.log(userPet);
+    return userPet;
   }
 };
+
 //converts name to Case
 const titleCase = (string) =>
   string[0].toUpperCase() + string.slice(1).toLowerCase();
