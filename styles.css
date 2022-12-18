@@ -16,7 +16,7 @@ body {
 :before,
 :after {
   box-sizing: border-box;
-  /* border: red 1px solid; */
+  border: red 1px solid;
 }
 
 body {
@@ -37,6 +37,7 @@ label,
   font-family: monospace;
   color: var(--text-brown);
 }
+
 .container {
   margin: 0 auto;
   max-width: 350px;
@@ -120,6 +121,30 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.btn {
+  margin: 5px auto;
+  max-width: fit-content;
+  padding: 5px 10px;
+  background-color: #f4a460;
+  color: #592a16;
+  text-transform: uppercase;
+  border: 2px solid #592a16;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px #592a16;
+}
+
+.btn:active {
+  box-shadow: 0 2px #592a16;
+  transform: translateY(4px);
+}
+
+.btn:hover {
+  background-color: #e5d3b3;
 }
 
 @keyframes fadeOut {

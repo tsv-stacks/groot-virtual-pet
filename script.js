@@ -9,6 +9,7 @@ class Pet {
     this.fitness = 10;
     this.isAlive = true;
     this.isAdult = false;
+    this.isHappy = true;
   }
   deathCheck() {
     if (this.fitness === 0) {
@@ -24,6 +25,14 @@ class Pet {
     } else {
       return this.checkUp();
     }
+  }
+  isSad() {
+    document.getElementById("smile").classList.add("sad");
+    return (this.isHappy = false);
+  }
+  happy() {
+    document.getElementById("smile").classList.remove("sad");
+    return (this.isHappy = true);
   }
   growUp() {
     this.age++;
