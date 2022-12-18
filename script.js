@@ -1,5 +1,8 @@
 let inputText = document.getElementById("input-name");
 let greetText = document.getElementById("greeting");
+const nameForm = document.getElementById("add-name-form");
+let userPet = {};
+let sideNav = document.getElementById("mySidenav");
 
 class Pet {
   constructor(name) {
@@ -65,7 +68,7 @@ class Pet {
   }
 }
 
-const testGroot = new Pet("groot");
+// const testGroot = new Pet("groot");
 
 const death = () => {
   document.getElementById("death-trigger").style.display = "none";
@@ -86,13 +89,20 @@ const nameGen = () => {
     );
   } else {
     play();
+    console.log("name recieved");
     testText = titleCase(testText);
     greetText.innerText = `Hello ${testText}\n I am Groot!`;
     document.getElementById("modal-add-name").classList.add("fade-out");
     greetText.classList.add("fade-in");
-    return console.log("name recieved");
+    setTimeout('nameForm.style.display = "none"', 2000);
+    userPet = new Pet(testText);
+    console.log(userPet);
+    return userPet;
   }
 };
+
+const gameStart = () => {};
+
 //converts name to Case
 const titleCase = (string) =>
   string[0].toUpperCase() + string.slice(1).toLowerCase();
@@ -101,6 +111,26 @@ const titleCase = (string) =>
 const play = () => {
   let audio = document.getElementById("audio");
   audio.play();
+};
+
+function openNav() {
+  if (sideNav.style.width === "250px") {
+    closeNav();
+  } else {
+    sideNav.style.width = "250px";
+    sideNav.style.padding = "40px 5px 0px 5px";
+  }
+}
+
+window.onclick = function (event) {
+  if (event.target == sideNav) {
+    closeNav();
+  }
+};
+
+const closeNav = () => {
+  sideNav.style.padding = "0";
+  sideNav.style.width = "0";
 };
 
 module.exports = {

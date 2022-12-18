@@ -1,6 +1,6 @@
 :root {
   --text-brown: #f4a460;
-  --bg-brown: #9b6844;
+  --bg-brown: rgb(155, 104, 68);
   --hover-brown: #e5d3b3;
 }
 
@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: monospace;
 }
 
 *,
@@ -110,7 +111,7 @@ footer {
 }
 
 #winner {
-  display: flexbox;
+  display: flex;
   display: none;
 }
 
@@ -121,6 +122,16 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+input[type="text"] {
+  margin: 0 auto;
+  margin-top: 10px;
+  max-width: 150px;
+  border: 2px solid rgb(89, 42, 22);
+  background-color: #e5d3b3;
+  color: #592a16;
+  border-radius: 8px;
 }
 
 .btn {
@@ -143,7 +154,8 @@ img {
   transform: translateY(4px);
 }
 
-.btn:hover {
+.btn:hover,
+svg:hover {
   background-color: #e5d3b3;
 }
 
@@ -163,6 +175,49 @@ img {
   100% {
     opacity: 1;
   }
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: rgba(89, 42, 22, 0.85); /* Black*/
+  color: var(--text-brown);
+  /* display: none; */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: hidden;
+  /* padding: 40px 5px 0px 5px; */
+  transition: 0.4s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.closebtn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.closebtn:hover {
+  color: red;
+}
+
+.list-item {
+  margin-bottom: 5px;
 }
 
 .fa {
