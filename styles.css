@@ -154,7 +154,8 @@ input[type="text"] {
   transform: translateY(4px);
 }
 
-.btn:hover {
+.btn:hover,
+svg:hover {
   background-color: #e5d3b3;
 }
 
@@ -184,14 +185,13 @@ input[type="text"] {
   z-index: 1; /* Stay on top */
   top: 0;
   left: 0;
-  background-color: rgba(89, 42, 22, 0.9); /* Black*/
-  color: #9b6844;
-  display: none;
+  background-color: rgba(89, 42, 22, 0.85); /* Black*/
+  color: var(--text-brown);
+  /* display: none; */
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 40px; /* Place content 60px from the top */
-  padding-left: 5px;
-  padding-right: 5px;
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  overflow-y: hidden;
+  /* padding: 40px 5px 0px 5px; */
+  transition: 0.4s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -202,6 +202,22 @@ input[type="text"] {
   .sidenav a {
     font-size: 18px;
   }
+}
+
+.closebtn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.closebtn:hover {
+  color: red;
+}
+
+.list-item {
+  margin-bottom: 5px;
 }
 
 .fa {

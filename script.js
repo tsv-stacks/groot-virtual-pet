@@ -2,6 +2,7 @@ let inputText = document.getElementById("input-name");
 let greetText = document.getElementById("greeting");
 const nameForm = document.getElementById("add-name-form");
 let userPet = {};
+let sideNav = document.getElementById("mySidenav");
 
 class Pet {
   constructor(name) {
@@ -110,26 +111,24 @@ const play = () => {
   audio.play();
 };
 
-let sideNav = document.getElementById("mySidenav");
-
 function openNav() {
-  if (sideNav.style.display === "block") {
+  if (sideNav.style.width === "250px") {
     closeNav();
   } else {
-    sideNav.style.display = "block";
     sideNav.style.width = "250px";
+    sideNav.style.padding = "40px 5px 0px 5px";
   }
-}
-
-function closeNav() {
-  sideNav.style.display = "none";
 }
 
 window.onclick = function (event) {
   if (event.target == sideNav) {
-    sideNav.style.width = "0";
-    sideNav.style.display = "none";
+    closeNav();
   }
+};
+
+const closeNav = () => {
+  sideNav.style.padding = "0";
+  sideNav.style.width = "0";
 };
 
 module.exports = {
