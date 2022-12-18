@@ -110,18 +110,27 @@ const play = () => {
   audio.play();
 };
 
+let sideNav = document.getElementById("mySidenav");
+
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  if (sideNav.style.display === "block") {
+    closeNav();
+  } else {
+    sideNav.style.display = "block";
+    sideNav.style.width = "250px";
+  }
 }
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
 function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-  document.body.style.backgroundColor = "white";
+  sideNav.style.display = "none";
 }
+
+window.onclick = function (event) {
+  if (event.target == sideNav) {
+    sideNav.style.width = "0";
+    sideNav.style.display = "none";
+  }
+};
 
 module.exports = {
   testEnvironment: "jsdom",
