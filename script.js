@@ -101,6 +101,8 @@ const nameGen = () => {
   }
 };
 
+const gameStart = () => {};
+
 //converts name to Case
 const titleCase = (string) =>
   string[0].toUpperCase() + string.slice(1).toLowerCase();
