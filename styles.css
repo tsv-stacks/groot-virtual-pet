@@ -30,11 +30,14 @@ body {
 h1,
 h2,
 h3,
-a {
+a,
+label,
+#submitbtn {
   text-align: center;
   font-family: monospace;
   color: var(--text-brown);
 }
+
 .container {
   margin: 0 auto;
   max-width: 350px;
@@ -99,6 +102,49 @@ footer {
 .fade-in {
   animation: fadeIn ease 2s;
   animation-fill-mode: forwards;
+}
+
+.sad {
+  margin-top: 25px;
+  transform: rotate(180deg) !important;
+}
+
+#winner {
+  display: flexbox;
+  display: none;
+}
+
+img {
+  max-height: 326px;
+  z-index: 2;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  margin: 5px auto;
+  max-width: fit-content;
+  padding: 5px 10px;
+  background-color: #f4a460;
+  color: #592a16;
+  text-transform: uppercase;
+  border: 2px solid #592a16;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px #592a16;
+}
+
+.btn:active {
+  box-shadow: 0 2px #592a16;
+  transform: translateY(4px);
+}
+
+.btn:hover {
+  background-color: #e5d3b3;
 }
 
 @keyframes fadeOut {

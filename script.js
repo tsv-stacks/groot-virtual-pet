@@ -1,6 +1,83 @@
 let inputText = document.getElementById("input-name");
 let greetText = document.getElementById("greeting");
 
+class Pet {
+  constructor(name) {
+    this.name = name;
+    this.age = 0;
+    this.hunger = 0;
+    this.fitness = 10;
+    this.isAlive = true;
+    this.isAdult = false;
+    this.isHappy = true;
+  }
+  deathCheck() {
+    if (this.fitness === 0) {
+      console.log("pet died due to poor health");
+      return (this.isAlive = false);
+    } else if (this.hunger >= 10) {
+      console.log("pet died due to starvation");
+      return (this.isAlive = false);
+    } else if (this.age >= 30) {
+      play();
+      this.isAdult = true;
+      return adultGroot();
+    } else {
+      return this.checkUp();
+    }
+  }
+  isSad() {
+    document.getElementById("smile").classList.add("sad");
+    return (this.isHappy = false);
+  }
+  happy() {
+    document.getElementById("smile").classList.remove("sad");
+    return (this.isHappy = true);
+  }
+  growUp() {
+    this.age++;
+    this.hunger += 5;
+    this.fitness -= 3;
+  }
+  walk() {
+    if (this.fitness >= 7) {
+      this.fitness = 10;
+    } else {
+      this.fitness += 4;
+    }
+  }
+  feed() {
+    if (this.hunger <= 3) {
+      this.hunger = 0;
+    } else {
+      this.hunger -= 3;
+    }
+  }
+  checkUp() {
+    if (this.fitness <= 3 && this.hunger >= 5) {
+      return "I am hungry AND I need a walk";
+    } else if (this.fitness <= 3 && this.hunger <= 4) {
+      return "I need a walk";
+    } else if (this.hunger >= 5 && this.fitness > 3) {
+      return "I am hungry";
+    }
+    return "I feel great!";
+  }
+}
+
+const testGroot = new Pet("groot");
+
+const death = () => {
+  document.getElementById("death-trigger").style.display = "none";
+  return "death";
+};
+
+const adultGroot = () => {
+  death();
+  document.getElementById("winner").style.display = "block";
+  return "game win";
+};
+
 const nameGen = () => {
   let testText = inputText.value.trim();
   if (testText === "") {
@@ -24,4 +101,10 @@ const titleCase = (string) =>
 const play = () => {
   let audio = document.getElementById("audio");
   audio.play();
+};
+
+module.exports = {
+  testEnvironment: "jsdom",
+  titleCase,
+  Pet,
 };

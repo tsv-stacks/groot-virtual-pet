@@ -10,6 +10,27 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <h1><span id="greeting">A Virtual Baby Groot Pet</span></h1>
@@ -33,7 +54,7 @@
             minlength="2"
           />
 
-          <button type="submit" class="submitbtn" onclick="nameGen()">
+          <button type="submit" class="submitbtn btn" onclick="nameGen()">
             Submit
           </button>
           <audio
@@ -44,8 +65,12 @@
       </form>
     </div>
 
+    <div id="winner" class="win">
+      <img src="./baby-groot-groot.gif" alt="groot waving gif" />
+    </div>
+
     <div class="container">
-      <div class="baby-groot">
+      <div class="baby-groot" id="death-trigger">
         <div class="top">
           <div class="header">
             <div class="hair">
@@ -65,7 +90,7 @@
           </div>
           <div class="face-container">
             <div class="eye"></div>
-            <div class="mouth"></div>
+            <div class="mouth" id="smile"></div>
             <div class="eye"></div>
           </div>
         </div>
