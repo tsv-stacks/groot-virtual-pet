@@ -1,6 +1,7 @@
 let inputText = document.getElementById("input-name");
 let greetText = document.getElementById("greeting");
 const nameForm = document.getElementById("add-name-form");
+let userPet = {};
 
 class Pet {
   constructor(name) {
@@ -93,7 +94,7 @@ const nameGen = () => {
     document.getElementById("modal-add-name").classList.add("fade-out");
     greetText.classList.add("fade-in");
     setTimeout('nameForm.style.display = "none"', 2000);
-    const userPet = new Pet(testText);
+    userPet = new Pet(testText);
     console.log(userPet);
     return userPet;
   }
