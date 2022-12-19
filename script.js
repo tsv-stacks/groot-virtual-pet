@@ -108,13 +108,18 @@ userPet = new Pet("groot");
 
 const death = () => {
   document.getElementById("death-trigger").style.display = "none";
+  document.getElementById("loser").style.display = "flex";
   gameContainer.style.display = "none";
   return "death";
 };
 
 const adultGroot = () => {
-  death();
-  document.getElementById("winner").style.display = "block";
+  play();
+  document.getElementById("death-trigger").style.display = "none";
+  document.getElementById("winner").style.display = "flex";
+  gameContainer.style.display = "none";
+  petStatus.innerText =
+    "WE ARE GROOT!\n\n You helped Baby Groot survive. \n\nThanks for playing!";
   return "game win";
 };
 

@@ -65,14 +65,21 @@
       </form>
     </div>
 
-    <div id="winner" class="win">
+    <div id="pet-status">
+      <h2><span id="pet-text"></span></h2>
+    </div>
+
+    <div id="winner" class="endgame">
       <img src="./baby-groot-groot.gif" alt="groot waving gif" />
+      <button class="btn" onclick="window.location.reload()">PLAY AGAIN</button>
+    </div>
+
+    <div class="endgame" id="loser">
+      <img src="./clipart1623809.png" alt="tombstone saying rest in peace" />
+      <button class="btn" onclick="window.location.reload()">PLAY AGAIN</button>
     </div>
 
     <div id="game-container">
-      <div id="pet-status">
-        <h2><span id="pet-text"></span></h2>
-      </div>
       <div id="game-output">
         <div class="meter">
           <label for="age-meter">Age: </label>

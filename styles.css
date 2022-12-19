@@ -115,6 +115,10 @@ footer {
   display: none;
 }
 
+#loser img {
+  max-width: 100%;
+}
+
 img {
   max-height: 326px;
   z-index: 2;
@@ -310,6 +314,18 @@ meter {
 
 .fa {
   color: var(--text-brown);
+}
+
+#winner {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#loser {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
 }
 
 footer a:hover,
