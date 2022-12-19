@@ -3,6 +3,9 @@ let greetText = document.getElementById("greeting");
 const nameForm = document.getElementById("add-name-form");
 let userPet = {};
 let sideNav = document.getElementById("mySidenav");
+let fitMeter = document.getElementById("health-meter");
+let ageMeter = document.getElementById("age-meter");
+let hungerMeter = document.getElementById("hunger-meter");
 
 class Pet {
   constructor(name) {
@@ -38,15 +41,18 @@ class Pet {
     return (this.isHappy = true);
   }
   growUp() {
+    play();
     this.age++;
     this.hunger += 5;
     this.fitness -= 3;
+    this.deathCheck();
   }
   walk() {
     if (this.fitness >= 7) {
       this.fitness = 10;
     } else {
       this.fitness += 4;
+      this.deathCheck();
     }
   }
   feed() {
@@ -54,17 +60,23 @@ class Pet {
       this.hunger = 0;
     } else {
       this.hunger -= 3;
+      this.deathCheck();
     }
   }
   checkUp() {
     if (this.fitness <= 3 && this.hunger >= 5) {
+      this.isSad();
       return "I am hungry AND I need a walk";
     } else if (this.fitness <= 3 && this.hunger <= 4) {
+      this.isSad();
       return "I need a walk";
     } else if (this.hunger >= 5 && this.fitness > 3) {
+      this.isSad();
       return "I am hungry";
+    } else {
+      this.happy();
+      return "I feel great!";
     }
-    return "I feel great!";
   }
 }
 
