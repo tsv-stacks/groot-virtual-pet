@@ -107,9 +107,13 @@ function progressUpdate(newAge, newHunger, newFitness) {
 userPet = new Pet("groot");
 
 const death = () => {
-  document.getElementById("death-trigger").style.display = "none";
-  document.getElementById("loser").style.display = "flex";
-  gameContainer.style.display = "none";
+  document.getElementById("death-trigger").classList.add("fade-out");
+  setTimeout(function () {
+    document.getElementById("death-trigger").style.display = "none";
+    document.getElementById("loser").style.display = "flex";
+    document.getElementById("loser").classList.add("fade-in");
+    gameContainer.style.display = "none";
+  }, 2000);
   return "death";
 };
 

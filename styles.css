@@ -233,36 +233,6 @@ meter {
   height: auto;
 }
 
-/* #health-meter::-webkit-meter-optimum-value {
-  background: red;
-} */
-
-/* #hunger-meter::-webkit-meter-even-less-good-value {
-  background: -webkit-gradient(
-    linear,
-    0% 0%,
-    0% 100%,
-    from(rgb(255, 119, 119)),
-    color-stop(0.2, rgb(255, 204, 204)),
-    color-stop(0.45, rgb(221, 68, 68)),
-    color-stop(0.55, rgb(221, 68, 68)),
-    to(rgb(255, 119, 119))
-  );
-}
-
-#hunger-meter::-webkit-meter-optimum-value {
-  background: -webkit-gradient(
-    linear,
-    0% 0%,
-    0% 100%,
-    from(rgb(170, 221, 119)),
-    color-stop(0.2, rgb(204, 238, 170)),
-    color-stop(0.45, rgb(119, 170, 51)),
-    color-stop(0.55, rgb(119, 170, 51)),
-    to(rgb(170, 221, 119))
-  );
-} */
-
 #hunger-meter::-webkit-meter-optimum-value {
   background: -webkit-gradient(
     linear,
