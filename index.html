@@ -70,7 +70,20 @@
     </div>
 
     <div id="game-container">
-      <div id="game-output"></div>
+      <div id="game-output">
+        <div class="meter">
+          <label for="age-meter">Age: </label>
+          <meter id="age-meter" min="0" max="30" value="0"></meter>
+        </div>
+        <div class="meter">
+          <label for="hunger-meter">Hunger: </label>
+          <meter id="hunger-meter" min="0" max="10" value="0"></meter>
+        </div>
+        <div class="meter">
+          <label for="health-meter">Fitness: </label>
+          <meter id="health-meter" min="0" max="10" value="10"></meter>
+        </div>
+      </div>
       <div class="game-btn">
         <button class="gamebtn btn">GROW</button>
         <button class="gamebtn btn">FEED</button>
