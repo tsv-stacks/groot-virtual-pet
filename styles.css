@@ -225,6 +225,10 @@ meter {
   height: auto;
 }
 
+/* meter::-webkit-meter-optimum-value {
+  background: red;
+} */
+
 .game-btn {
   display: flex;
   justify-content: space-evenly;

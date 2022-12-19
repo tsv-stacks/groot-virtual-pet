@@ -25,7 +25,7 @@ class Pet {
     } else if (this.hunger >= 10) {
       console.log("pet died due to starvation");
       return (this.isAlive = false);
-    } else if (this.age >= 30) {
+    } else if (this.age >= 20) {
       play();
       this.isAdult = true;
       return adultGroot();
@@ -46,6 +46,7 @@ class Pet {
     this.age++;
     this.hunger += 5;
     this.fitness -= 3;
+    progressUpdate(this.age, this.hunger, this.fitness);
     this.deathCheck();
   }
   walk() {
@@ -53,14 +54,17 @@ class Pet {
       this.fitness = 10;
     } else {
       this.fitness += 4;
+      progressUpdate(this.age, this.hunger, this.fitness);
       this.deathCheck();
     }
   }
   feed() {
     if (this.hunger <= 3) {
       this.hunger = 0;
+      progressUpdate(this.age, this.hunger, this.fitness);
     } else {
       this.hunger -= 3;
+      progressUpdate(this.age, this.hunger, this.fitness);
       this.deathCheck();
     }
   }
@@ -83,6 +87,15 @@ class Pet {
       return "I feel great!";
     }
   }
+}
+
+function progressUpdate(newAge, newHunger, newFitness) {
+  console.log(
+    "age = " + newAge + ", hunger = " + newHunger + ", fitness = " + newFitness
+  );
+  ageMeter.value = newAge;
+  hungerMeter.value = newHunger;
+  fitMeter.value = newFitness;
 }
 
 userPet = new Pet("groot");
