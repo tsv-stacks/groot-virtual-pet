@@ -6,6 +6,7 @@ let sideNav = document.getElementById("mySidenav");
 let fitMeter = document.getElementById("health-meter");
 let ageMeter = document.getElementById("age-meter");
 let hungerMeter = document.getElementById("hunger-meter");
+let petStatus = document.getElementById("pet-text");
 
 class Pet {
   constructor(name) {
@@ -66,21 +67,25 @@ class Pet {
   checkUp() {
     if (this.fitness <= 3 && this.hunger >= 5) {
       this.isSad();
+      petStatus.textContent = "I am hungry AND I need a walk!";
       return "I am hungry AND I need a walk";
     } else if (this.fitness <= 3 && this.hunger <= 4) {
       this.isSad();
+      petStatus.textContent = "I need a walk!";
       return "I need a walk";
     } else if (this.hunger >= 5 && this.fitness > 3) {
       this.isSad();
+      petStatus.textContent = "I am hungry!";
       return "I am hungry";
     } else {
       this.happy();
+      petStatus.textContent = "I feel great!";
       return "I feel great!";
     }
   }
 }
 
-// const testGroot = new Pet("groot");
+userPet = new Pet("groot");
 
 const death = () => {
   document.getElementById("death-trigger").style.display = "none";
@@ -107,7 +112,7 @@ const nameGen = () => {
     document.getElementById("modal-add-name").classList.add("fade-out");
     greetText.classList.add("fade-in");
     setTimeout('nameForm.style.display = "none"', 2000);
-    userPet = new Pet(testText);
+    // userPet = new Pet(testText);
     console.log(userPet);
     return userPet;
   }
