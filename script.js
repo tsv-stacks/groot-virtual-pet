@@ -7,6 +7,7 @@ let fitMeter = document.getElementById("health-meter");
 let ageMeter = document.getElementById("age-meter");
 let hungerMeter = document.getElementById("hunger-meter");
 let petStatus = document.getElementById("pet-text");
+let gameContainer = document.getElementById("game-container");
 
 class Pet {
   constructor(name) {
@@ -21,9 +22,13 @@ class Pet {
   deathCheck() {
     if (this.fitness === 0) {
       console.log("pet died due to poor health");
+      petStatus.textContent = "Baby Groot died due to poor health :(";
+      death();
       return (this.isAlive = false);
     } else if (this.hunger >= 10) {
       console.log("pet died due to starvation");
+      petStatus.textContent = "Baby Groot died due to starvation :(";
+      death();
       return (this.isAlive = false);
     } else if (this.age >= 20) {
       play();
@@ -52,6 +57,7 @@ class Pet {
   walk() {
     if (this.fitness >= 7) {
       this.fitness = 10;
+      progressUpdate(this.age, this.hunger, this.fitness);
     } else {
       this.fitness += 4;
       progressUpdate(this.age, this.hunger, this.fitness);
@@ -102,6 +108,7 @@ userPet = new Pet("groot");
 
 const death = () => {
   document.getElementById("death-trigger").style.display = "none";
+  gameContainer.style.display = "none";
   return "death";
 };
 
