@@ -119,11 +119,15 @@ const death = () => {
 
 const adultGroot = () => {
   play();
-  document.getElementById("death-trigger").style.display = "none";
-  document.getElementById("winner").style.display = "flex";
-  gameContainer.style.display = "none";
-  petStatus.innerText =
-    "WE ARE GROOT!\n\n You helped Baby Groot survive. \n\nThanks for playing!";
+  document.getElementById("death-trigger").classList.add("fade-out");
+  setTimeout(function () {
+    document.getElementById("death-trigger").style.display = "none";
+    document.getElementById("winner").style.display = "flex";
+    document.getElementById("winner").classList.add("fade-in");
+    gameContainer.style.display = "none";
+    petStatus.innerText =
+      "WE ARE GROOT!\n\n You helped Baby Groot survive. \n\nThanks for playing!";
+  }, 2000);
   return "game win";
 };
 
