@@ -47,31 +47,43 @@ class Pet {
     return (this.isHappy = true);
   }
   growUp() {
-    play();
-    this.age++;
-    this.hunger += 4;
-    this.fitness -= 3;
-    progressUpdate(this.age, this.hunger, this.fitness);
-    this.deathCheck();
-  }
-  walk() {
-    if (this.fitness >= 7) {
-      this.fitness = 10;
-      progressUpdate(this.age, this.hunger, this.fitness);
+    if (userPet.isAlive === false || userPet.isAdult === true) {
+      return "Game Over";
     } else {
-      this.fitness += 4;
+      play();
+      this.age++;
+      this.hunger += 4;
+      this.fitness -= 3;
       progressUpdate(this.age, this.hunger, this.fitness);
       this.deathCheck();
     }
   }
-  feed() {
-    if (this.hunger <= 3) {
-      this.hunger = 0;
-      progressUpdate(this.age, this.hunger, this.fitness);
+  walk() {
+    if (userPet.isAlive === false || userPet.isAdult === true) {
+      return "Game Over";
     } else {
-      this.hunger -= 3;
-      progressUpdate(this.age, this.hunger, this.fitness);
-      this.deathCheck();
+      if (this.fitness >= 7) {
+        this.fitness = 10;
+        progressUpdate(this.age, this.hunger, this.fitness);
+      } else {
+        this.fitness += 4;
+        progressUpdate(this.age, this.hunger, this.fitness);
+        this.deathCheck();
+      }
+    }
+  }
+  feed() {
+    if (userPet.isAlive === false || userPet.isAdult === true) {
+      return "Game Over";
+    } else {
+      if (this.hunger <= 3) {
+        this.hunger = 0;
+        progressUpdate(this.age, this.hunger, this.fitness);
+      } else {
+        this.hunger -= 3;
+        progressUpdate(this.age, this.hunger, this.fitness);
+        this.deathCheck();
+      }
     }
   }
   checkUp() {
@@ -104,6 +116,7 @@ function progressUpdate(newAge, newHunger, newFitness) {
   fitMeter.value = newFitness;
 }
 
+// delete - for testing game & endgame
 userPet = new Pet("groot");
 
 const death = () => {
