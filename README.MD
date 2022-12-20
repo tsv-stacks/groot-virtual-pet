@@ -5,7 +5,7 @@ Have you ever picked up your tamagotchi and thought:
 
 # How to Play
 
-Your goal is to keep Baby Groot alive until he is 20 days old and able to safely grow out of his flower pot. You'll have to manage Groots health & hunger.
+Your goal is to keep Baby Groot alive until he is 15 days old and able to safely grow out of his flower pot. You'll have to manage Groots health & hunger.
 
 # Guide
 

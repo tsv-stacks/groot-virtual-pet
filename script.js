@@ -30,7 +30,7 @@ class Pet {
       petStatus.textContent = "Baby Groot died due to starvation :(";
       death();
       return (this.isAlive = false);
-    } else if (this.age >= 20) {
+    } else if (this.age >= 15) {
       play();
       this.isAdult = true;
       return adultGroot();
