@@ -206,11 +206,15 @@ svg:hover {
 }
 
 /* delete - only for designing */
-#add-name-form {
+/* #add-name-form {
   display: none !important;
-}
+} */
 
 /* Game Container */
+
+#game-container {
+  display: none;
+}
 
 #pet-text {
   font-style: italic;

@@ -117,7 +117,7 @@ function progressUpdate(newAge, newHunger, newFitness) {
 }
 
 // delete - for testing game & endgame
-userPet = new Pet("groot");
+// userPet = new Pet("groot");
 
 const death = () => {
   document.getElementById("death-trigger").classList.add("fade-out");
@@ -157,8 +157,12 @@ const nameGen = () => {
     greetText.innerText = `Hello ${testText}\n I am Groot!`;
     document.getElementById("modal-add-name").classList.add("fade-out");
     greetText.classList.add("fade-in");
-    setTimeout('nameForm.style.display = "none"', 2000);
-    // userPet = new Pet(testText);
+    setTimeout(function () {
+      nameForm.style.display = "none";
+      gameContainer.style.display = "block";
+      gameContainer.classList.add("fade-in");
+    }, 2000);
+    userPet = new Pet(testText);
     console.log(userPet);
     return userPet;
   }
