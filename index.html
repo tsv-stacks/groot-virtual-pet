@@ -33,7 +33,7 @@
     <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
-    <h1><span id="greeting">A Virtual Baby Groot Pet</span></h1>
+    <h1><span id="greeting">Virtual Baby Groot Pet</span></h1>
 
     <div id="modal-add-name" class="modal">
       <form
@@ -65,8 +65,56 @@
       </form>
     </div>
 
-    <div id="winner" class="win">
+    <div id="pet-status">
+      <h2><span id="pet-text"></span></h2>
+    </div>
+
+    <div id="winner" class="endgame">
       <img src="./baby-groot-groot.gif" alt="groot waving gif" />
+      <button class="btn" onclick="window.location.reload()">PLAY AGAIN</button>
+    </div>
+
+    <div class="endgame" id="loser">
+      <img src="./clipart1623809.png" alt="tombstone saying rest in peace" />
+      <button class="btn" onclick="window.location.reload()">PLAY AGAIN</button>
+    </div>
+
+    <div id="game-container">
+      <div id="game-output">
+        <div class="meter">
+          <label for="age-meter">Age: </label>
+          <meter id="age-meter" min="0" max="20" value="0"></meter>
+        </div>
+        <div class="meter">
+          <label for="hunger-meter">Hunger: </label>
+          <meter
+            id="hunger-meter"
+            min="0"
+            low="5"
+            high="6"
+            optimum="1"
+            max="10"
+            value="0"
+          ></meter>
+        </div>
+        <div class="meter">
+          <label for="health-meter">Fitness: </label>
+          <meter
+            id="health-meter"
+            min="0"
+            low="4"
+            high="7"
+            optimum="10"
+            max="10"
+            value="10"
+          ></meter>
+        </div>
+      </div>
+      <div class="game-btn">
+        <button class="gamebtn btn" onclick="userPet.growUp()">GROW</button>
+        <button class="gamebtn btn" onclick="userPet.feed()">FEED</button>
+        <button class="gamebtn btn" onclick="userPet.walk()">EXercise</button>
+      </div>
     </div>
 
     <div class="container">
@@ -119,6 +167,34 @@
       </div>
     </div>
 
+    <div title="click to close" id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <h3>Instructions!</h3>
+      <h4>
+        Your goal is to keep Baby Groot alive and happy until he is old enough
+        to leave his plant pot.
+      </h4>
+      <ul>
+        <li class="list-item">Grow - increases Baby Groots ages by 1.</li>
+        <li class="list-item">Walking - improves Baby Groots fitness.</li>
+        <li class="list-item">Exercise - reduces Baby Groots hunger.</li>
+      </ul>
+      <h4>A few tips and things to remember:</h4>
+      <ul>
+        <li class="list-item">
+          If Baby Groots fitness drops below 0 he will die!
+        </li>
+        <li class="list-item">If Baby Groots hunger is over 10 he will die!</li>
+        <li class="list-item">
+          If you can keep Baby Groot alive for 15 days he will survive and you
+          will win the game
+        </li>
+        <li class="list-item">Baby Groot will tell you how he is feeling</li>
+      </ul>
+    </div>
+
     <footer>
       <div>
         <p class="me-tsvstacks">
@@ -126,13 +202,27 @@
         </p>
       </div>
       <div class="fa-icons">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          style="vertical-align: bottom"
+          width="34px"
+          height="34px"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+          onclick="openNav()"
+        >
+          <path
+            fill="#592a16"
+            d="M16 20v2H4c-1.1 0-2-.9-2-2V7h2v13h12m4-18H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-5 12h-2v-2h2v2m1.8-5.2c-.3.4-.7.7-1.1.9c-.2.2-.4.3-.5.5c-.2.2-.2.5-.2.8h-2c0-.5.1-.9.3-1.2c.2-.3.5-.6 1-.9c.3-.2.5-.4.6-.6c.2-.2.2-.5.2-.8c0-.3-.1-.6-.3-.8c-.2-.2-.4-.3-.8-.3c-.3 0-.5.1-.7.2c-.2.2-.3.4-.3.7h-1.9c0-.8.2-1.4.8-1.8c.7-.3 1.4-.5 2.3-.5c.9 0 1.7.2 2.2.7c.5.5.8 1.1.8 1.8c0 .5-.2.9-.4 1.3Z"
+          />
+        </svg>
         <a
           href="https://www.linkedin.com/in/tarndeep-virdi/"
           target="_blank"
           class="fa-2x fa fa-linkedin-square"
         ></a>
         <a
-          href="https://github.com/tsv-stacks"
+          href="https://github.com/tsv-stacks/groot-virtual-pet"
           target="_blank"
           class="fa-2x fa fa-github-square"
         ></a>

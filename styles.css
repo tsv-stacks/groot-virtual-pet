@@ -1,6 +1,6 @@
 :root {
   --text-brown: #f4a460;
-  --bg-brown: #9b6844;
+  --bg-brown: rgb(155, 104, 68);
   --hover-brown: #e5d3b3;
 }
 
@@ -10,13 +10,14 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: monospace;
 }
 
 *,
 :before,
 :after {
   box-sizing: border-box;
-  border: red 1px solid;
+  /* border: red 1px solid; */
 }
 
 body {
@@ -110,8 +111,12 @@ footer {
 }
 
 #winner {
-  display: flexbox;
+  display: flex;
   display: none;
+}
+
+#loser img {
+  max-width: 100%;
 }
 
 img {
@@ -121,6 +126,16 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+input[type="text"] {
+  margin: 0 auto;
+  margin-top: 10px;
+  max-width: 150px;
+  border: 2px solid rgb(89, 42, 22);
+  background-color: #e5d3b3;
+  color: #592a16;
+  border-radius: 8px;
 }
 
 .btn {
@@ -143,7 +158,8 @@ img {
   transform: translateY(4px);
 }
 
-.btn:hover {
+.btn:hover,
+svg:hover {
   background-color: #e5d3b3;
 }
 
@@ -165,8 +181,124 @@ img {
   }
 }
 
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: rgba(89, 42, 22, 0.85); /* Black*/
+  color: var(--text-brown);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: hidden;
+  transition: 0.4s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/* delete - only for designing */
+/* #add-name-form {
+  display: none !important;
+} */
+
+/* Game Container */
+#game-container {
+  display: none;
+}
+
+#pet-text {
+  font-style: italic;
+}
+
+.meter {
+  display: flex;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.meter label {
+  font-size: 16px;
+  width: 30%;
+}
+
+meter {
+  width: 70%;
+  height: auto;
+}
+
+#hunger-meter::-webkit-meter-optimum-value {
+  background: -webkit-gradient(
+    linear,
+    0% 0%,
+    0% 100%,
+    from(rgb(170, 221, 119)),
+    color-stop(0.2, rgb(204, 238, 170)),
+    color-stop(0.45, rgb(119, 170, 51)),
+    color-stop(0.55, rgb(119, 170, 51)),
+    to(rgb(170, 221, 119))
+  );
+}
+
+#hunger-meter::-webkit-meter-even-less-good-value {
+  background: -webkit-gradient(
+    linear,
+    0% 0%,
+    0% 100%,
+    from(rgb(255, 119, 119)),
+    color-stop(0.2, rgb(255, 204, 204)),
+    color-stop(0.45, rgb(221, 68, 68)),
+    color-stop(0.55, rgb(221, 68, 68)),
+    to(rgb(255, 119, 119))
+  );
+}
+
+.game-btn {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.closebtn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.closebtn:hover {
+  color: red;
+}
+
+.list-item {
+  margin-bottom: 5px;
+}
+
 .fa {
   color: var(--text-brown);
+}
+
+#winner {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#loser {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
 }
 
 footer a:hover,
