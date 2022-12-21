@@ -2,7 +2,7 @@
 
 ## Site: https://groot-virtual-pet.netlify.app/
 
-<img src="./images/readme%20img.JPG" alt="picture of homepage" style="width:600px;">
+<img src="./images and sounds/readme img.JPG" alt="picture of homepage" style="width:600px;">
 
 Have you ever picked up your tamagotchi and thought:
 "Gee whiz I really wish I could play this but with baby Groot from the critically acclaimed Marvels Guardians of the Galaxy"
