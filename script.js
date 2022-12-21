@@ -21,12 +21,12 @@ class Pet {
   }
   deathCheck() {
     if (this.fitness <= 0) {
-      console.log("pet died due to poor health");
+      // console.log("pet died due to poor health");
       petStatus.textContent = "Baby Groot died due to poor health :(";
       death();
       return (this.isAlive = false);
     } else if (this.hunger >= 10) {
-      console.log("pet died due to starvation");
+      // console.log("pet died due to starvation");
       petStatus.textContent = "Baby Groot died due to starvation :(";
       death();
       return (this.isAlive = false);
@@ -108,9 +108,9 @@ class Pet {
 }
 
 function progressUpdate(newAge, newHunger, newFitness) {
-  console.log(
-    "age = " + newAge + ", hunger = " + newHunger + ", fitness = " + newFitness
-  );
+  // console.log(
+  //   "age = " + newAge + ", hunger = " + newHunger + ", fitness = " + newFitness
+  // );
   ageMeter.value = newAge;
   hungerMeter.value = newHunger;
   fitMeter.value = newFitness;
@@ -152,7 +152,7 @@ const nameGen = () => {
     );
   } else {
     play();
-    console.log("name recieved");
+    // console.log("name recieved");
     testText = titleCase(testText);
     greetText.innerText = `Hello ${testText}\n I am Groot!`;
     document.getElementById("modal-add-name").classList.add("fade-out");
@@ -163,7 +163,7 @@ const nameGen = () => {
       gameContainer.classList.add("fade-in");
     }, 2000);
     userPet = new Pet(testText);
-    console.log(userPet);
+    // console.log(userPet);
     return userPet;
   }
 };
