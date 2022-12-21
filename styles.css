@@ -202,6 +202,12 @@ svg:hover {
   }
 }
 
+@media (max-width: 450px) {
+  footer {
+    padding-bottom: 20px;
+  }
+}
+
 /* Game Container */
 #game-container {
   display: none;
