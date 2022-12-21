@@ -17,7 +17,6 @@ body {
 :before,
 :after {
   box-sizing: border-box;
-  /* border: red 1px solid; */
 }
 
 body {
@@ -78,8 +77,6 @@ footer {
 .me-tsvstacks,
 .me-tsvstacks a {
   color: black;
-  /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, */
-  /* 1px 1px 0 #000; */
   font-size: 16px;
   text-decoration: none;
 }
@@ -111,7 +108,6 @@ footer {
 }
 
 #winner {
-  display: flex;
   display: none;
 }
 
@@ -161,6 +157,7 @@ input[type="text"] {
 .btn:hover,
 svg:hover {
   background-color: #e5d3b3;
+  cursor: pointer;
 }
 
 @keyframes fadeOut {
@@ -183,17 +180,17 @@ svg:hover {
 
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgba(89, 42, 22, 0.85); /* Black*/
+  background-color: rgba(89, 42, 22, 0.85);
   color: var(--text-brown);
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-x: hidden;
   overflow-y: hidden;
-  transition: 0.4s; /* 0.5 second transition effect to slide in the sidenav */
+  transition: 0.4s;
 }
 
 @media screen and (max-height: 450px) {
@@ -204,11 +201,6 @@ svg:hover {
     font-size: 18px;
   }
 }
-
-/* delete - only for designing */
-/* #add-name-form {
-  display: none !important;
-} */
 
 /* Game Container */
 #game-container {
@@ -741,7 +733,6 @@ footer a:focus {
 .baby-groot .bottom {
   width: 100%;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
 }
