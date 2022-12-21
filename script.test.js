@@ -7,9 +7,7 @@ describe("input to name clean", () => {
 });
 
 describe("Testing grow Up method on Pet constructor", () => {
-  // set newPet as instance for testing
   const newPet = new Pet("test groot");
-  // set oldPet as instance for testing
   const oldPet = new Pet("old groot");
   oldPet.growUp();
   oldPet.growUp();

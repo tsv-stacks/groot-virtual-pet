@@ -152,7 +152,7 @@ const nameGen = () => {
     );
   } else {
     play();
-    console.log("name recieved");
+    // console.log("name recieved");
     testText = titleCase(testText);
     greetText.innerText = `Hello ${testText}\n I am Groot!`;
     document.getElementById("modal-add-name").classList.add("fade-out");
