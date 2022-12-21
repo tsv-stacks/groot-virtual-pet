@@ -11,15 +11,11 @@ Well then this is the project for you!
 
 ## How to Play
 
----
-
 Your goal is to keep Baby Groot alive until he is 15 days old and able to safely grow out of his flower pot.
 
 You'll have to manage Groots health & hunger.
 
 ## Guide
-
----
 
 - If Baby Groots fitness drops below 0 he will die!
 
@@ -28,8 +24,6 @@ You'll have to manage Groots health & hunger.
 - Don't panic! Baby Groot will tell you how he is feeling.
 
 ## Project setup
-
----
 
 Install Jest using `npm`:
 
@@ -58,14 +52,10 @@ npm i jest-environment-jsdom --save-dev
 
 ## Features to Implement
 
----
-
 - [x] Animations between game screens
-- [ ] Makes Groots eyes follow the cursor
+- [ ] Make Groots eyes follow the cursor
 
 ## Credit
-
----
 
 Baby Groot CSS & Animation designed by @baumannzone
 
